@@ -1,7 +1,7 @@
 .wrapper {
    --search-radius: 92px;
    --search-height: 46px;
-   --search-top-spacer: 5px;
+   --search-top-spacer: 10px;
    --search-btn-width: 52px;
 
    width: 100%;
@@ -54,7 +54,7 @@
       content: '';
       height: calc(var(--search-height) - var(--search-top-spacer) * 2);
       width: 1px;
-      top: var(--search-top-spacer);
+      top: calc(var(--search-top-spacer) - 2px);
       right: 52px;
       background-color: rgb(22, 24, 35, 0.12);
       position: absolute;
@@ -83,9 +83,10 @@
    height: 100%;
    border-radius: 0 var(--search-radius) var(--search-radius) 0;
    transition: ease-in-out 0.13s all;
-   font-size: 1.9rem;
    color: rgb(22, 24, 35, 0.34);
-
+   display: flex;
+   align-items: center;
+   justify-content: center;
    &:hover {
       cursor: pointer;
       background-color: rgb(22, 24, 35, 0.03);
@@ -105,9 +106,16 @@
 .actions-btn {
    background-color: transparent;
    font-size: 2.2rem;
-   padding: 4px 12px;
+   margin: 0 9px;
+   width: 32px;
+   height: 32px;
    color: #161823;
    cursor: pointer;
+}
+
+.message-icon {
+   padding: 2px 2px 0;
+   margin-left: 5px;
 }
 
 .more-btn {

@@ -1,4 +1,5 @@
 import Tippy from '@tippyjs/react/headless';
+import 'tippy.js/dist/tippy.css';
 import classNames from 'classnames/bind';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import MenuItem from './MenuItem';
@@ -7,7 +8,6 @@ import styles from './Menu.module.scss';
 import { useState } from 'react';
 
 const cx = classNames.bind(styles);
-
 const defaultFn = () => {};
 
 function Menu({ children, items = [], onChange = defaultFn }) {
