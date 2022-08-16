@@ -6,10 +6,10 @@ import GlobalStyles from '~/components/GlobalStyle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <GlobalStyles>
+   // <React.StrictMode>
+   <GlobalStyles>
       <App />
-    </GlobalStyles>
-  </React.StrictMode>,
+   </GlobalStyles>,
+   // </React.StrictMode>,
 );
 reportWebVitals();
