@@ -1,5 +1,19 @@
 @import 'normalize.css';
+// Variables
+:root {
+   --primary: rgb(254, 44, 85, 1);
+   --black: #000;
+   --text-color: #161823;
+   --white: #fff;
 
+   // Default layout
+   --default-layout-header-height: 60px;
+   --default-layout-width: 1150px;
+   --default-layout-horizontal-spacer: 24px;
+
+   // font-family
+   --font-family: 'ProximaNova', sans-serif;
+}
 // Fonts embed
 @font-face {
    font-family: ProximaNova;
@@ -21,19 +35,6 @@
    src: url('/assets/fonts/sofiapro-bold.woff2');
    font-weight: 700;
 }
-//
-
-:root {
-   --primary: rgb(254, 44, 85, 1);
-   --black: #000;
-   --text-color: #161823;
-   --white: #fff;
-
-   // Default layout
-   --default-layout-header-height: 60px;
-   --default-layout-width: 1150px;
-   --default-layout-horizontal-spacer: 24px;
-}
 
 * {
    box-sizing: border-box;
@@ -46,7 +47,7 @@ html {
 }
 
 body {
-   font-family: 'ProximaNova', sans-serif;
+   font-family: var(--font-family);
    font-size: 1.6rem;
    line-height: 1.5;
    text-rendering: optimizeSpeed;
@@ -57,7 +58,7 @@ input,
 [tabindex] {
    outline: none;
    border: none;
-   font-family: 'ProximaNova', sans-serif;
+   font-family: var(--font-family);
 }
 
 a[href] {

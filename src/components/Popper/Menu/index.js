@@ -8,9 +8,9 @@ import styles from './Menu.module.scss';
 import { useState } from 'react';
 
 const cx = classNames.bind(styles);
-const defaultFn = () => {};
+const defaultFn = () => { };
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false }) {
    const [history, setHistory] = useState([{ data: items }]);
    const current = history[history.length - 1];
    const renderItems = () => {
@@ -34,6 +34,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
 
    return (
       <Tippy
+         hideOnClick={hideOnClick}
          interactive="true"
          placement="bottom-end"
          delay={[0, 900]}

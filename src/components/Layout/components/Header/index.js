@@ -7,13 +7,16 @@ import {
    faPlus,
    faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
-import { InboxIcon, MessageIcon } from '~/components/Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion, faUser } from '@fortawesome/free-regular-svg-icons';
+import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
 import classNames from 'classnames/bind';
+import 'tippy.js/dist/tippy.css';
+
+import routesConfig from '~/configs/routes';
+import { InboxIcon, MessageIcon } from '~/components/Icons';
 import images from '~/assets/images';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
@@ -94,7 +97,7 @@ function Header() {
    return (
       <header className={cx('wrapper')}>
          <div className={cx('inner')}>
-            <img src={images.logo} alt="tiktok" />
+            <Link to={routesConfig.home} className={cx('logo-link')}><img src={images.logo} alt="tiktok" /></Link>
 
             {/* search */}
             <Search />

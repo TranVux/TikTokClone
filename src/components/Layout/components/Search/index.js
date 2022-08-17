@@ -32,8 +32,8 @@ function Search() {
          setLoading(true);
 
          const result = await searchService.search(debounced);
-         setSearchResult(result);
 
+         setSearchResult(result);
          setLoading(false);
       }
 
@@ -50,6 +50,17 @@ function Search() {
    const handleHideResult = () => {
       setShowResult(false);
    };
+
+   const handleChange = (e) => {
+      const searchValue = e.target.value;
+      if (!searchValue.startsWith(' ')) {
+         setSearchValue(searchValue);
+      }
+   }
+
+   const handleSubmit = () => {
+
+   }
 
    return (
       <HeadeLessTippy
@@ -73,9 +84,7 @@ function Search() {
                placeholder="Search accounts and videos"
                spellCheck="false"
                value={searchValue}
-               onChange={(e) => {
-                  setSearchValue(e.target.value);
-               }}
+               onChange={handleChange}
                onFocus={() => {
                   setShowResult(true);
                }}
@@ -87,7 +96,9 @@ function Search() {
             )}
             {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
 
-            <button className={cx('search-btn')}>
+            <button className={cx('search-btn')} onClick={handleSubmit} onMouseDown={(e) => {
+               e.preventDefault();
+            }}>
                <SearchIcon />
             </button>
          </div>
