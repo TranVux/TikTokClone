@@ -15,14 +15,14 @@ import Tippy from '@tippyjs/react';
 import classNames from 'classnames/bind';
 import 'tippy.js/dist/tippy.css';
 
-import routesConfig from '~/configs/routes';
+import config from '~/configs';
 import { InboxIcon, MessageIcon } from '~/components/Icons';
 import images from '~/assets/images';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
 import WrapperIcon from '~/components/Icons/WrapperIcon';
-import Search from '../Search';
+import Search from '~/layouts/components/Search';
 
 const cx = classNames.bind(styles);
 const MENU_ITEM = [
@@ -97,11 +97,10 @@ function Header() {
    return (
       <header className={cx('wrapper')}>
          <div className={cx('inner')}>
-            <Link to={routesConfig.home} className={cx('logo-link')}><img src={images.logo} alt="tiktok" /></Link>
+            <Link to={config.routes.home} className={cx('logo-link')}><img src={images.logo} alt="tiktok" /></Link>
 
             {/* search */}
             <Search />
-
             <div className={cx('actions')}>
                <Button textOutline leftIcon={<FontAwesomeIcon icon={faPlus} />}>
                   Upload
